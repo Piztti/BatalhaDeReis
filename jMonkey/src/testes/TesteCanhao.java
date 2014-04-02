@@ -170,7 +170,7 @@ public class TesteCanhao extends SimpleApplication {
     /** Position the cannon ball  */
     ball_geo.setLocalTranslation(cam.getLocation());
     /** Make the ball physcial with a mass > 0.0f */
-    ball_phy = new RigidBodyControl(10f);
+    ball_phy = new RigidBodyControl(1f);
     /** Add physical ball to physics space. */
     ball_geo.addControl(ball_phy);
     bulletAppState.getPhysicsSpace().add(ball_phy);
