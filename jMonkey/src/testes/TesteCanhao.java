@@ -70,7 +70,7 @@ public class TesteCanhao extends SimpleApplication {
     //bulletAppState.getPhysicsSpace().enableDebug(assetManager);
 
     /** Configure cam to look at scene */
-    cam.setLocation(new Vector3f(0, 4f, 6f));
+    cam.setLocation(new Vector3f(0, 4f, 36f));
     cam.lookAt(new Vector3f(2, 2, 0), Vector3f.UNIT_Y);
     /** Add InputManager action: Left click triggers shooting. */
     inputManager.addMapping("shoot", 
@@ -121,7 +121,7 @@ public class TesteCanhao extends SimpleApplication {
   public void initFloor() {
     Geometry floor_geo = new Geometry("Floor", floor);
     floor_geo.setMaterial(floor_mat);
-    floor_geo.setLocalTranslation(0, -0.1f, 0);
+    floor_geo.setLocalTranslation(10, -0.1f, 0);
     this.rootNode.attachChild(floor_geo);
     /* Make the floor physical with mass 0.0f! */
     floor_phy = new RigidBodyControl(0.0f);
@@ -133,8 +133,8 @@ public class TesteCanhao extends SimpleApplication {
   public void initWall() {
     float startpt = brickLength / 4;
     float height = 0;
-    for (int j = 0; j < 15; j++) {
-      for (int i = 0; i < 6; i++) {
+    for (int j = 0; j < 20; j++) {
+      for (int i = 0; i < 20; i++) {
         Vector3f vt =
          new Vector3f(i * brickLength * 2 + startpt, brickHeight + height, 0);
         makeBrick(vt);
@@ -170,12 +170,12 @@ public class TesteCanhao extends SimpleApplication {
     /** Position the cannon ball  */
     ball_geo.setLocalTranslation(cam.getLocation());
     /** Make the ball physcial with a mass > 0.0f */
-    ball_phy = new RigidBodyControl(10f);
+    ball_phy = new RigidBodyControl(0.3f);
     /** Add physical ball to physics space. */
     ball_geo.addControl(ball_phy);
     bulletAppState.getPhysicsSpace().add(ball_phy);
     /** Accelerate the physcial ball to shoot it. */
-    ball_phy.setLinearVelocity(cam.getDirection().mult(25));
+    ball_phy.setLinearVelocity(cam.getDirection().mult(50));
   }
 
   /** A plus sign used as crosshairs to help the player with aiming.*/
