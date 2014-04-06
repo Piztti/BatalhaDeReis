@@ -170,19 +170,21 @@ public class TesteCanhao extends SimpleApplication {
     
 //    x pos do mouse:0.0 y pos do mouse:4.0 z pos do mouse:36.0
 //x dir do mouse:0.05769913 y dir do mouse:0.15393291 z dir do mouse:-0.9863951
-    Vector3f localTiro = new Vector3f(0.0f, 4.0f, 36.0f);
-    Vector3f direcaoTiro = new Vector3f(0.05769913f, 0.15393291f, -0.9863951f);
+//    Vector3f localTiro = new Vector3f(0.0f, 4.0f, 36.0f);
+//    Vector3f direcaoTiro = new Vector3f(0.05769913f, 0.15393291f, -0.9863951f);
     /** Position the cannon ball  */
-    ball_geo.setLocalTranslation(localTiro);
-    System.out.println("x pos do mouse:" + ball_geo.getLocalTranslation().x + " y pos do mouse:" + ball_geo.getLocalTranslation().y + " z pos do mouse:" + ball_geo.getLocalTranslation().z);
+    ball_geo.setLocalTranslation(cam.getLocation());
+//    ball_geo.setLocalTranslation(localTiro);
+//    System.out.println("x pos do mouse:" + ball_geo.getLocalTranslation().x + " y pos do mouse:" + ball_geo.getLocalTranslation().y + " z pos do mouse:" + ball_geo.getLocalTranslation().z);
     /** Make the ball physcial with a mass > 0.0f */
     ball_phy = new RigidBodyControl(5.0f);
     /** Add physical ball to physics space. */
     ball_geo.addControl(ball_phy);
     bulletAppState.getPhysicsSpace().add(ball_phy);
     /** Accelerate the physcial ball to shoot it. */
-    ball_phy.setLinearVelocity(direcaoTiro.mult(30));
-    System.out.println("x dir do mouse:" + cam.getDirection().x + " y dir do mouse:" + cam.getDirection().y + " z dir do mouse:" + cam.getDirection().z);
+    ball_phy.setLinearVelocity(cam.getDirection().mult(50));
+//    ball_phy.setLinearVelocity(direcaoTiro.mult(30));
+//    System.out.println("x dir do mouse:" + cam.getDirection().x + " y dir do mouse:" + cam.getDirection().y + " z dir do mouse:" + cam.getDirection().z);
   }
 
   /** A plus sign used as crosshairs to help the player with aiming.*/
