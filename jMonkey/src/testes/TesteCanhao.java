@@ -238,7 +238,7 @@ public class TesteCanhao extends SimpleApplication {
         brick_geo.addControl(brick_phy);
         bulletAppState.getPhysicsSpace().add(brick_phy);
         brick_phy.setFriction(1.0f);
-        brick_phy.setDamping(0.3f, 0.3f);
+        brick_phy.setDamping(0.0f, 0.0f);
         brick_phy.setRestitution(0.0f);
         brick_phy.setSleepingThresholds(1.0f, 1.0f);
     }
@@ -293,7 +293,7 @@ public class TesteCanhao extends SimpleApplication {
         /**
          * Make the ball physcial with a mass > 0.0f
          */
-        ball_phy = new RigidBodyControl(1.0f);
+        ball_phy = new RigidBodyControl(15.0f);
         /**
          * Add physical ball to physics space.
          */
