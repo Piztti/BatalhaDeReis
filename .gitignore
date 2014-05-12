@@ -1,3 +1,11 @@
 /jMonkey/build/
 /jMonkey/dist/
 jMonkey/dist.zip
+
+*.bak
+
+*.bak~1
+
+Documentos/Analise/Especificação de Requisitos.pdf
+
+Documentos/Analise/Especificação de Requisitos.pdf

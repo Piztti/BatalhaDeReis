@@ -237,8 +237,8 @@ public class TesteCanhao extends SimpleApplication {
          */
         brick_geo.addControl(brick_phy);
         bulletAppState.getPhysicsSpace().add(brick_phy);
-        brick_phy.setFriction(0.7f);
-        brick_phy.setDamping(0.3f, 0.3f);
+        brick_phy.setFriction(1.0f);
+        brick_phy.setDamping(0.0f, 0.0f);
         brick_phy.setRestitution(0.0f);
         brick_phy.setSleepingThresholds(1.0f, 1.0f);
     }
